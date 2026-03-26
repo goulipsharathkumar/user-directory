@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  background: rgba(10,12,16,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+.logoMark {
+  width: 34px; height: 34px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 8px;
+  display: grid; place-items: center;
+  font-family: var(--font-head); font-weight: 800; font-size: 14px; color: #fff;
+}
+.logoText { font-family: var(--font-head); font-weight: 700; font-size: 18px; }
+.nav { display: flex; gap: 8px; }
+.navLink {
+  padding: 6px 14px; border-radius: 8px; text-decoration: none;
+  color: var(--muted); font-size: 14px; font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.navLink:hover { background: var(--border); color: var(--text); }

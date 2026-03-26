@@ -1,0 +1,47 @@
+.page { min-height: 100vh; background: var(--bg); }
+.main { max-width: 1100px; margin: 0 auto; padding: 56px 24px 80px; }
+.hero { margin-bottom: 40px; }
+.eyebrow {
+  font-family: var(--font-head); font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+}
+.title {
+  font-family: var(--font-head); font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800; letter-spacing: -1px;
+  background: linear-gradient(120deg, var(--text) 40%, var(--accent2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 12px;
+}
+.subtitle { color: var(--muted); font-size: 16px; max-width: 480px; }
+.controls { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.searchWrap { position: relative; flex: 1; min-width: 260px; max-width: 460px; }
+.searchIcon {
+  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  width: 17px; height: 17px; color: var(--muted); pointer-events: none;
+}
+.searchInput {
+  width: 100%; padding: 11px 40px 11px 42px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); color: var(--text);
+  font-family: var(--font-body); font-size: 14px; outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.searchInput::placeholder { color: var(--muted); }
+.searchInput:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(91,138,245,0.15); }
+.clearBtn {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 13px; padding: 2px 4px; transition: color 0.2s;
+}
+.clearBtn:hover { color: var(--text); }
+.stats { margin-left: auto; }
+.statBadge {
+  padding: 6px 14px; border-radius: 20px;
+  background: var(--surface); border: 1px solid var(--border);
+  font-size: 13px; color: var(--muted); font-weight: 500;
+}
+.error {
+  padding: 20px 24px; background: rgba(248,113,113,0.1);
+  border: 1px solid rgba(248,113,113,0.3); border-radius: var(--radius);
+  color: var(--danger); font-size: 14px;
+}

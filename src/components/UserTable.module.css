@@ -1,0 +1,52 @@
+.tableWrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); }
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table thead tr { border-bottom: 1px solid var(--border); }
+.table th {
+  padding: 14px 18px; text-align: left;
+  font-family: var(--font-head); font-size: 11px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase; color: var(--muted); white-space: nowrap;
+}
+.thSort { cursor: pointer; user-select: none; transition: color 0.2s; }
+.thSort:hover { color: var(--text) !important; }
+.thSort span, .thSort svg { vertical-align: middle; }
+.thSort svg { margin-left: 5px; }
+.thAction { width: 60px; }
+
+@keyframes rowIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.row {
+  border-bottom: 1px solid var(--border); cursor: pointer;
+  animation: rowIn 0.3s ease both; transition: background 0.15s;
+}
+.row:last-child { border-bottom: none; }
+.row:hover { background: rgba(91,138,245,0.06); }
+.table td { padding: 14px 18px; vertical-align: middle; }
+
+.nameCell { display: flex; align-items: center; gap: 11px; }
+.avatar {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: hsl(var(--hue, 220), 60%, 20%);
+  border: 1px solid hsl(var(--hue, 220), 60%, 30%);
+  display: grid; place-items: center;
+  font-family: var(--font-head); font-weight: 700; font-size: 14px;
+  color: hsl(var(--hue, 220), 80%, 75%); flex-shrink: 0;
+}
+.name { font-weight: 500; color: var(--text); }
+.email { color: var(--muted); font-size: 13px; }
+.phone { color: var(--muted); font-size: 13px; }
+.companyBadge {
+  display: inline-block; padding: 3px 10px; border-radius: 20px;
+  background: rgba(91,138,245,0.12); border: 1px solid rgba(91,138,245,0.25);
+  color: var(--accent); font-size: 12px; font-weight: 500;
+}
+.viewBtn { color: var(--muted); font-size: 13px; transition: color 0.2s; }
+.row:hover .viewBtn { color: var(--accent); }
+
+.empty { text-align: center; padding: 80px 24px; color: var(--muted); }
+.emptyIcon { font-size: 36px; display: block; margin-bottom: 12px; }
+.emptyHint { font-size: 13px; margin-top: 4px; }
+.empty strong { color: var(--text); }
+.count { padding: 12px 18px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); }
+.count strong { color: var(--text); }
