@@ -1,70 +1,152 @@
-# Getting Started with Create React App
+# 🏢 BuyerForesight — User Directory Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![React Router](https://img.shields.io/badge/React_Router-6-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![CSS Modules](https://img.shields.io/badge/CSS_Modules-000?style=for-the-badge&logo=css3&logoColor=white)
+![Vercel](https://img.shields.io/badge/Deployed-Vercel-000?style=for-the-badge&logo=vercel&logoColor=white)
 
-## Available Scripts
+A fully responsive **User Directory Dashboard** built with React as part of the BuyerForesight Frontend Engineer Assessment.
 
-In the project directory, you can run:
+🔗 **Live Demo → [user-directory-smoky-sigma.vercel.app](https://user-directory-smoky-sigma.vercel.app)**
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ✨ Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 📋 **User Table** — Displays all users with Name, Email, Phone, and Company
+- 🔍 **Live Search** — Filter users instantly by name or email (client-side, no API call)
+- 🔃 **Sorting** — Sort by Name or Company in ascending / descending order with one click
+- 👤 **User Detail Page** — Click any row to view full user profile (contact, address, company)
+- 🔗 **React Router** — Clean URL-based navigation (`/` and `/user/:id`)
+- ⚡ **Custom Hooks** — `useUsers` and `useUser` hooks handle all API logic cleanly
+- 💅 **CSS Modules** — Scoped styles, zero conflicts, fully maintainable
+- 📱 **Responsive Design** — Works on desktop, tablet, and mobile
+- 🌙 **Dark Theme** — Professional dark UI with smooth animations
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Tech Stack
 
-### `npm run build`
+| Technology | Purpose |
+|---|---|
+| React 18 | UI library |
+| React Router v6 | Client-side routing |
+| CSS Modules | Scoped component styling |
+| JSONPlaceholder API | Mock user data |
+| Vercel | Deployment |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📁 Project Structure
+```
+src/
+├── hooks/
+│   └── useUsers.js          # Custom hooks for API calls
+├── components/
+│   ├── Header.js            # Sticky navigation header
+│   ├── Loader.js            # Loading spinner
+│   └── UserTable.js         # Table with search + sort logic
+├── pages/
+│   ├── Dashboard.js         # Main user listing page
+│   ├── UserDetail.js        # Individual user profile page
+│   └── NotFound.js          # 404 page
+├── App.js                   # Route definitions
+├── index.js                 # App entry point
+└── index.css                # Global CSS variables & reset
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🚀 Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
+- Node.js v16+
+- npm
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/goulipsharathkumar/user-directory.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Navigate into the project
+cd user-directory
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Install dependencies
+npm install
 
-## Learn More
+# Start the development server
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+App runs at **http://localhost:3000** 🎉
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Production Build
+```bash
+npm run build
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📸 Screenshots
 
-### Analyzing the Bundle Size
+### Dashboard — User Table with Search & Sort
+> Clean dark UI showing all 10 users fetched from the API with live search and column sorting.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### User Detail Page
+> Full user profile with contact info, address, and company details in a card grid layout.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🔌 API Used
 
-### Advanced Configuration
+**JSONPlaceholder** — Free fake REST API for testing and prototyping.
+```
+GET https://jsonplaceholder.typicode.com/users       → All users
+GET https://jsonplaceholder.typicode.com/users/:id   → Single user
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 💡 Key Implementation Highlights
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**Custom Hook Pattern**
+```js
+// Clean separation of data fetching from UI
+const { users, loading, error } = useUsers();
+```
 
-### `npm run build` fails to minify
+**Client-side Search with useMemo**
+```js
+const filtered = useMemo(() => {
+  const q = search.toLowerCase().trim();
+  return users.filter(u =>
+    u.name.toLowerCase().includes(q) ||
+    u.email.toLowerCase().includes(q)
+  );
+}, [users, search]);
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Toggle Sort Logic**
+```js
+const toggle = (key) =>
+  setSort(prev =>
+    prev.key === key
+      ? { key, dir: prev.dir === 'asc' ? 'desc' : 'asc' }
+      : { key, dir: 'asc' }
+  );
+```
+
+---
+
+## 👨‍💻 Built By
+
+**Gouli P Sharath Kumar**
+Full Stack Developer (MERN Stack)
+📧 sharathgouli20@gmail.com
+🔗 [GitHub](https://github.com/goulipsharathkumar)
+
+---
+
+## 📄 License
+
+This project was built as part of a Frontend Engineer Assessment for BuyerForesight.
